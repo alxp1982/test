@@ -26,6 +26,6 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Get version
         id: vars
-        run: echo ::set-output name=readme::$(cat readme.md)
+        run: echo ::set-output name=readme::$(cat README.md)
       - name: Test output
         run: echo ${{ steps.vars.outputs.readme }}
