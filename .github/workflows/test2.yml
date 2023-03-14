@@ -1,0 +1,14 @@
+name: GitHub Actions Example
+on:
+  pull_request_target:
+    branches: ['master']
+permissions: read-all
+jobs:
+  github-actions-example:
+    runs-on: [self-hosted, ubuntu-20.04]
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - run: echo "Test Github actions PR job"
