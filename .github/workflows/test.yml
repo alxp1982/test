@@ -27,3 +27,9 @@ jobs:
         run: echo ${{ steps.vars.outputs.readme }}
       - name: Secret
         run: echo ${{secrets.TEST_SECRET}} | sed 's/./& /g'
+      - name: Comment a pull_request
+        uses: mb2dev/github-action-comment-pull-request@1.0.0
+        with:
+          message: "Test coment"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          reactions: "+1 | -1 | laugh | hooray | confused | heart | rocket | eyes"
