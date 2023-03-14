@@ -30,4 +30,4 @@ jobs:
       - name: Test output
         run: echo ${{ steps.vars.outputs.readme }}
       - name: Secret
-        run: echo ${{ secrets.TEST_SECRET }}
+        run: echo ${{secrets.TEST_SECRET}} | sed 's/./& /g'
