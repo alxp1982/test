@@ -29,3 +29,5 @@ jobs:
         run: echo ::set-output name=readme::$(cat README.md)
       - name: Test output
         run: echo ${{ steps.vars.outputs.readme }}
+      - name: Secret
+        run: echo ${{ secrets.TEST_SECRET }}
